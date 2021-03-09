@@ -9,13 +9,15 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/result_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:gravity="end|right"
-        android:text="0"
+        android:gravity="end"
+        android:text="@string/btn_zero"
         android:textColor="@color/white"
-        android:textSize="60sp" />
+        android:textSize="60sp"
+        android:maxLines="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,13 +32,48 @@
             <TableRow
                 android:layout_marginBottom="10dp">
                 <Button
+                    android:id="@+id/remove_all"
+                    android:onClick="function"
                     android:background="@drawable/circle"
                     android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="AC"
+                    android:textSize="32sp"
+                    android:text="@string/btn_remove"
+                    android:textColor="@color/black"
+                    app:backgroundTint="@color/gray"
+                    android:layout_marginStart="10dp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5" />
+
+                <Button
+                    android:id="@+id/plus_minus"
+                    android:onClick="function"
+                    android:background="@drawable/circle"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="32sp"
+                    android:text="@string/btn_minus_plus"
+                    app:backgroundTint="@color/gray"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5" />
+
+                <Button
+                    android:id="@+id/percent100"
+                    android:onClick="function"
+                    android:background="@drawable/circle"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:padding="15dp"
+                    android:textSize="32sp"
+                    android:text="@string/btn_percent"
                     android:textColor="@color/black"
                     app:backgroundTint="@color/gray"/>
 
@@ -45,71 +82,50 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/divide"
+                    android:onClick="function"
                     android:background="@drawable/circle"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:padding="15dp"
-                    android:textColor="@color/black"
-                    android:textSize="32dp"
-                    android:text="+/-"
-                    app:backgroundTint="@color/gray"/>
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5" />
-
-                <Button
-                    android:background="@drawable/circle"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="%"
-                    android:textColor="@color/black"
-                    app:backgroundTint="@color/gray"/>
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5" />
-
-                <Button
-                    android:background="@drawable/circle"
-                    android:clickable="true"
                     android:layout_marginRight="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
+                    android:textSize="32sp"
                     android:textColor="@color/black"
-                    android:text="÷"
-                    app:backgroundTint="@color/yellow"/>
+                    android:text="@string/btn_divide"
+                    app:backgroundTint="@color/yellow"
+                    android:layout_marginEnd="10dp" />
             </TableRow>
 
             <TableRow
                 android:layout_marginBottom="10dp">
                 <Button
+                    android:id="@+id/seven"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="7"
+                    android:textSize="32sp"
+                    android:text="@string/btn_seven"
                     android:textColor="@color/white"
-                    app:backgroundTint="@color/dim_gray"/>
+                    app:backgroundTint="@color/dim_gray"
+                    android:layout_marginStart="10dp" />
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/eight"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
                     android:textColor="@color/white"
-                    android:textSize="32dp"
-                    android:text="8"
+                    android:textSize="32sp"
+                    android:text="@string/btn_eight"
                     app:backgroundTint="@color/dim_gray"/>
 
                 <Space
@@ -117,12 +133,14 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/nine"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="9"
+                    android:textSize="32sp"
+                    android:text="@string/btn_nine"
                     android:textColor="@color/white"
                     app:backgroundTint="@color/dim_gray"/>
 
@@ -131,43 +149,50 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/multiple"
+                    android:onClick="function"
                     android:background="@drawable/circle"
-                    android:clickable="true"
                     android:layout_marginRight="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
+                    android:textSize="32sp"
                     android:textColor="@color/black"
-                    android:text="×"
-                    app:backgroundTint="@color/yellow"/>
+                    android:text="@string/btn_multiply"
+                    app:backgroundTint="@color/yellow"
+                    android:layout_marginEnd="10dp" />
             </TableRow>
 
             <TableRow
                 android:layout_marginBottom="10dp">
                 <Button
+                    android:id="@+id/four"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="4"
+                    android:textSize="32sp"
+                    android:text="@string/btn_four"
                     android:textColor="@color/white"
-                    app:backgroundTint="@color/dim_gray"/>
+                    app:backgroundTint="@color/dim_gray"
+                    android:layout_marginStart="10dp" />
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/five"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
                     android:textColor="@color/white"
-                    android:textSize="32dp"
-                    android:text="5"
+                    android:textSize="32sp"
+                    android:text="@string/btn_five"
                     app:backgroundTint="@color/dim_gray"/>
 
                 <Space
@@ -175,12 +200,14 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/six"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="6"
+                    android:textSize="32sp"
+                    android:text="@string/btn_six"
                     android:textColor="@color/white"
                     app:backgroundTint="@color/dim_gray"/>
 
@@ -189,43 +216,50 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/minus"
+                    android:onClick="function"
                     android:background="@drawable/circle"
-                    android:clickable="true"
                     android:layout_marginRight="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
+                    android:textSize="32sp"
                     android:textColor="@color/black"
-                    android:text="-"
-                    app:backgroundTint="@color/yellow"/>
+                    android:text="@string/btn_minus"
+                    app:backgroundTint="@color/yellow"
+                    android:layout_marginEnd="10dp" />
             </TableRow>
 
             <TableRow
                 android:layout_marginBottom="10dp">
                 <Button
+                    android:id="@+id/one"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="1"
+                    android:textSize="32sp"
+                    android:text="@string/btn_one"
                     android:textColor="@color/white"
-                    app:backgroundTint="@color/dim_gray"/>
+                    app:backgroundTint="@color/dim_gray"
+                    android:layout_marginStart="10dp" />
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/two"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
                     android:textColor="@color/white"
-                    android:textSize="32dp"
-                    android:text="2"
+                    android:textSize="32sp"
+                    android:text="@string/btn_two"
                     app:backgroundTint="@color/dim_gray"/>
 
                 <Space
@@ -233,12 +267,14 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/three"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="3"
+                    android:textSize="32sp"
+                    android:text="@string/btn_three"
                     android:textColor="@color/white"
                     app:backgroundTint="@color/dim_gray"/>
 
@@ -247,29 +283,34 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/plus"
+                    android:onClick="function"
                     android:background="@drawable/circle"
-                    android:clickable="true"
                     android:layout_marginRight="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
+                    android:textSize="32sp"
                     android:textColor="@color/black"
-                    android:text="÷"
-                    app:backgroundTint="@color/yellow"/>
+                    android:text="@string/btn_plus"
+                    app:backgroundTint="@color/yellow"
+                    android:layout_marginEnd="10dp" />
             </TableRow>
 
             <TableRow>
                 <Button
+                    android:id="@+id/zero"
+                    android:onClick="num"
                     android:background="@drawable/circle"
                     android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="7"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="0"
+                    android:textSize="32sp"
+                    android:text="@string/btn_zero"
                     android:textColor="@color/white"
-                    app:backgroundTint="@color/dim_gray"/>
+                    app:backgroundTint="@color/dim_gray"
+                    android:layout_marginStart="10dp" />
 
 
                 <Space
@@ -277,12 +318,14 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/dot"
+                    android:onClick="function"
                     android:background="@drawable/circle"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
-                    android:text="."
+                    android:textSize="32sp"
+                    android:text="@string/btn_dot"
                     android:textColor="@color/white"
                     app:backgroundTint="@color/dim_gray"/>
 
@@ -291,16 +334,18 @@
                     android:layout_weight="0.5" />
 
                 <Button
+                    android:id="@+id/equal"
+                    android:onClick="function"
                     android:background="@drawable/circle"
-                    android:clickable="true"
                     android:layout_marginRight="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="3"
                     android:padding="15dp"
-                    android:textSize="32dp"
+                    android:textSize="32sp"
                     android:textColor="@color/black"
-                    android:text="="
-                    app:backgroundTint="@color/yellow"/>
+                    android:text="@string/btn_equal"
+                    app:backgroundTint="@color/yellow"
+                    android:layout_marginEnd="10dp" />
             </TableRow>
         </TableLayout>
 
