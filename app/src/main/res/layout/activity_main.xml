@@ -304,7 +304,7 @@
                     android:background="@drawable/circle"
                     android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
-                    android:layout_weight="7"
+                    android:layout_weight="12"
                     android:padding="15dp"
                     android:textSize="32sp"
                     android:text="@string/btn_zero"
@@ -312,22 +312,6 @@
                     app:backgroundTint="@color/dim_gray"
                     android:layout_marginStart="10dp" />
 
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5" />
-
-                <Button
-                    android:id="@+id/dot"
-                    android:onClick="function"
-                    android:background="@drawable/circle"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:padding="15dp"
-                    android:textSize="32sp"
-                    android:text="@string/btn_dot"
-                    android:textColor="@color/white"
-                    app:backgroundTint="@color/dim_gray"/>
 
                 <Space
                     android:layout_width="0dp"
